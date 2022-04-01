@@ -22,6 +22,23 @@ class MyApp extends StatelessWidget {
         title: 'miroru[みろる]チャット - 匿名でランダムなチャットアプリ',
         debugShowCheckedModeBanner: false,
         // home: const HomePage(),
+        onGenerateRoute: (settings) {
+          switch (settings.name) {
+            case HomePage.route:
+              return MaterialPageRoute(
+                builder: (context) => const HomePage(),
+              );
+            case TermsOfServicePage.route:
+              return MaterialPageRoute(
+                builder: (context) => const TermsOfServicePage(),
+              );
+            case HomPrivacy.route:
+              return MaterialPageRoute(
+                builder: (context) => const HomPrivacy(),
+              );
+          }
+          return null;
+        },
         initialRoute: HomePage.route,
         routes: {
           HomePage.route: (context) => const HomePage(),
